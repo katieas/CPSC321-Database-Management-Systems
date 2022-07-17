@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/public/styles.css">
+</head>
+
+<body>
+    <div class="nav">
+        <a href="/">Home</a>
+        <a href="/songList">Song List</a>
+        <a href="/profiles">Profiles</a>
+        <a href="/viewPerformance">View Performances</a>
+    </div>
+
+    <p>
+        Number of times played: <%= times_played %>
+    </p>
+
+    <p>
+        Total Play Time: <%= played_minutes %>m <%= played_seconds %>s
+    </p>
+
+    <p>
+        Most Played Song(s) (played <%= most_played_times %> times): 
+        <br>
+        <ul>
+        <% most_played_songs.forEach(function(song) { %>
+            <li><%= song.song_title %> by <%= song.artist %></li>
+        <% }) %>
+        </ul>
+    </p>
+</body>
+</html>

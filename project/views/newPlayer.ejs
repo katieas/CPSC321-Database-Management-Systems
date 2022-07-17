@@ -1,0 +1,24 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/public/styles.css">
+</head>
+
+<body>
+    <div class="nav">
+        <a href="/">Home</a>
+        <a href="/songList">Song List</a>
+        <a href="/profiles">Profiles</a>
+        <a href="/viewPerformance">View Performances</a>
+    </div>
+
+    <form action="/profiles" method="POST">
+        <label for="first_name">Enter First Name: </label>
+        <input type="text" name="first_name">
+        <br>
+        <label for="last_name">Enter Last Name: </label>
+        <input type="text" name="last_name">
+        <br>
+        <input type="submit" value="Enter New Player">
+    </form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/public/styles.css">
+</head>
+
+<body>
+    <div class="nav">
+        <a href="/">Home</a>
+        <a href="/songList">Song List</a>
+        <a href="/profiles">Profiles</a>
+        <a href="/viewPerformance">View Performances</a>
+    </div>
+    
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Song Title</th>
+            <th>Song Artist</th>
+            <th>Guitar Player</th>
+            <th>Microphone Player</th>
+        </tr>
+        <% Performance.forEach(function(p) { %>
+        <tr>
+            <td><%= p.date %></td>
+            <td><%= p.song_title %></td>
+            <td><%= p.artist %></td>
+            <td><%= p.guitar_first %> <%= p.guitar_last %></td>
+            <td><%= p.mic_first %> <%= p.mic_last %></td>
+        </tr>
+        <% }) %>
+    </table>
+</body>
+</html>

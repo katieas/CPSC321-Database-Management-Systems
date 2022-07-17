@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/public/styles.css">
+</head>
+
+<body>
+    <div class="nav">
+        <a href="/">Home</a>
+        <a href="/songList">Song List</a>
+        <a href="/profiles">Profiles</a>
+        <a href="/viewPerformance">View Performances</a>
+    </div>
+
+    <form action="/viewPerformance" method="POST" id="performanceForm">
+        <label for="date">Enter Date: </label>
+        <input type="text" name="date" placeholder="MM/DD/YY" maxlength="8">
+        <br>
+        <label for="song_title">Enter Song Title: </label>
+        <input type="text" name="song_title" id="song_title">
+        <br>
+        <label for="song_artist">Enter Song Artist: </label>
+        <input type="text" name="song_artist" id="song_artist">
+        <br>
+        <label for="guitar">Guitar Player: </label>
+        <select name="guitar">
+            <option value="null">No Guitar Player</option>
+            <% Profiles.forEach(function(player) { %>
+                <option value="<%= player.player_id %>"><%= player.first_name %> <%= player.last_name %></option>
+            <% }) %>
+        </select>
+        <br>
+        <label for="mic">Microphone Player: </label>
+        <select name="mic">
+            <option value="null">No Mic Player</option>
+            <% Profiles.forEach(function(player) { %>
+                <option value="<%= player.player_id %>"><%= player.first_name %> <%= player.last_name %></option>
+            <% }) %>
+        </select>
+        <br>
+        <input type="submit" value="Enter Performance">
+    </form>
+
+</body>
+</html>

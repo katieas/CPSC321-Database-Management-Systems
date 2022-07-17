@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/public/styles.css">
+</head>
+<body>
+    <div class="nav">
+        <a href="/">Home</a>
+        <a href="/songList">Song List</a>
+        <a href="/profiles">Profiles</a>
+        <a href="/viewPerformance">View Performances</a>
+    </div>
+
+    <p>
+        Total spent on DLC songs: $<%= dlc_spent %>
+    </p>
+
+    <p>
+        Most Played Song(s) (played <%= song_count %> times): 
+        <br>
+        <ul>
+        <% most_played_songs.forEach(function(song) { %>
+            <li><%= song.song_title %> by <%= song.artist %></li>
+        <% }) %>
+        </ul>
+    </p>
+
+    <h3>Genres by Average Difficulty</h3>
+    <table id="genre_diff">
+        <tr>
+            <th>Genre</th>
+            <th>Average Guitar Difficulty</th>
+            <th>Average Microphone Difficulty</th>
+        </tr>
+        <% genre_difficulty.forEach(function(genre) { %>
+        <tr>
+            <td><%= genre.genre %></td>
+            <td><%= genre.avg_guitar %></td>
+            <td><%= genre.avg_mic %></td>
+        </tr>
+        <% }) %>
+    </table>
+
+</body>
+</html>

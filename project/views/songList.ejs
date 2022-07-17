@@ -1,0 +1,53 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/public/styles.css">
+</head>
+
+<body>
+    <div class="nav">
+        <a href="/">Home</a>
+        <a href="/songList">Song List</a>
+        <a href="/profiles">Profiles</a>
+        <a href="/viewPerformance">View Performances</a>
+    </div>
+
+    <br>
+    <button onclick="location.href='/songStats'">Get Song Stats</button>
+    <br>
+    
+    <table>
+        <tr>
+            <th>Song Title</th>
+            <th>Artist</th>
+            <th>Year Released</th>
+            <th>Genre</th>
+            <th>Song Length (seconds)</th>
+            <th>Guitar Difficulty</th>
+            <th>Mic Difficulty</th>
+            <th>DLC?</th>
+            <th>Play Count</th>
+        </tr>
+        
+        <% songList.forEach(function(song) { %>
+        <tr>
+            <td><%= song.song_title %></td>
+            <td><%= song.artist %></td>
+            <td><%= song.year %></td>
+            <td><%= song.genre %></td>
+            <td><%= song.length %></td>
+            <td><%= song.difficulty_guitar %></td>
+            <td><%= song.difficulty_mic %></td>
+            <td>
+                <% if(song.dlc) { %>
+                    yes
+                <% } else { %>
+                    no
+                <% } %>
+            </td>
+            <td><%= song.play_count %></td>
+        </tr>
+        <% }) %>
+    </table>
+
+</body>
+</html>
